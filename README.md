@@ -1,48 +1,36 @@
-# space-pipes
+# Space pipes - игра-головоломка
 
-This template should help get you started developing with Vue 3 in Vite.
+## Суть игры:
 
-## Recommended IDE Setup
+Ключевая концепция игры - проложить путь от источника к конечному участку пути. Всего в игре три уровня, которые различаются размерами поля (6x6, 9x9, 12x12). Также существуют разные виды труб, а именно Прямые, Угловые и Т-образные.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+-------
 
-## Recommended Browser Setup
+## Стек технологий:
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+<img src="https://skillicons.dev/icons?i=vue,tailwind,pinia,vite" alt="Tech stack icons" />
 
-## Type Support for `.vue` Imports in TS
+## Что было сделано:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Разработано хранилище состояния игровой сессии, в котором отслеживается текущее окно, этап, время и состояния модальных окон.
+- Разработаны компоненты игрового поля и игровой ячейки, которые при создании уровня заполняются случчайным образом обретая случайный вид трубы, и случайны угол поворота.
+- Разработаны специальные компоненты для эффекта наведения на определённые элементы со специальной обёрткой.
+- Разработана система модальных окон и сами модальные окна для отображения победы и поражения в игре.
+- Разработан алгоритм итеративного поиска пути на основе алгоритма BFS, который динамически отслеживает путь при изменениях и в случае нахождения визуализирует его на поле.
 
-## Customize configuration
+## Инструкция по развёртывания:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+1) Скачайте или склоньте репозиторий в удобное для вас место
+```bash
+git clone git@github.com:lisantov/space-pipes.git
 ```
 
-### Compile and Hot-Reload for Development
+2) Перейдите в корень проекта и установите зависимости
+```bash
+npm i
+```
 
-```sh
+3) Запустите проект локально
+```bash
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
